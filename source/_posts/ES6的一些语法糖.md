@@ -1,8 +1,9 @@
 ---
-title: ES6的一些改进语法
+title: ES6的一些语法糖
 date: 2021-10-09 17:33:45
 tags: [ES6, JS, 优化]
 categories: 知识点
+top: true
 ---
 > 这里 ES5 之后的语法简单的统称为 ES6
 
@@ -106,7 +107,6 @@ let name = obj && obj.name;
 使用 ?.
 
 ```js
-
 let name = obj?.name;
 ```
 
@@ -123,7 +123,120 @@ const obj = {
 const age = obj?.age ?? 18 // age: 18
 ```
 
+#### 五、同时为多个变量赋值
+
+以前
+
+```js
+let a = 1
+let b = 2
+let c = 3
+```
+
+改进
+
+```js
+let [a, b, c] = [1, 2, 3]
+```
+
+#### 六、循环写法
+
+以前
+
+```js
+for (let i = 0; i < data.length, i++) {}
+```
+
+改进
+
+```js
+for (let i in data)
+for (let i of data)
+```
+
+#### 七、默认参数值
+
+```js
+const add = (a = 1, b = 2) => { return a + b }
+add(3, 5) // 8
+add()     // 3
+```
+
+#### 八、延展操作符
+
+以前
+
+```js
+const data = [1, 2, 3]
+const newData = [4, 5, 6].concat(data)
+```
+
+改进
+
+```js
+const data = [1, 2, 3]
+const newData = [4, 5, 6, ...data]
+```
+
+还可以用操作符来克隆
+
+```js
+const data = [1, 2, 3]
+const newData = [...data]
+```
+
+#### 字符串转换为数字
+
+以前
+
+```js
+let num1 = parseInt('123')
+let num2 = parseFloat('123.4')
+```
+
+改进
+
+```js
+let num1 = +'123'
+let num2 = +'123.4'
+```
+
+#### Object.entries()
+
+把对象转换为数组
+
+```js
+const data = {
+  a: 1,
+  b: 2,
+  c: 3
+}
+const arr = Object.entries(data)
+console.log(arr)
+// [
+//   ['a', 1],
+//   ['b', 2],
+//   ['c', 3]
+// ]
+```
+
+#### Object.values()
+
+提取对象的所有 键值对 里的值
+
+```js
+const data = {
+  a: 1,
+  b: 2,
+  c: 3
+}
+const arr = Object.values(data)
+console.log(arr)
+// [1, 2, 3]
+```
+
 #### 参考
 
 > [你会用ES6，那倒是用啊！](https://juejin.cn/post/7016520448204603423)
 > [可选链 操作符(?. 与 ??)](https://www.jianshu.com/p/94b3aa98c91f)
+> [2021 年需要了解的 34 个 JavaScript 优化技巧](https://mp.weixin.qq.com/s/GNyXCpVqlzEJlAGzfEP0jA)
