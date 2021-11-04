@@ -16,7 +16,7 @@ Windows、Linux、IOS、Android等都能支持
 - 学校每日打卡
 - 抢到4价疫苗(没用到`Selenium`，主要是轮询+短信提醒)
 - 还有一些脚本是用的油猴插件，如抢课(纯`js脚本`)、查全专业同学考试的成绩组成并做成表格(`python+js脚本`)等
-![gif](2.gif)
+![gif](3.gif)
 
 <!--more-->
 
