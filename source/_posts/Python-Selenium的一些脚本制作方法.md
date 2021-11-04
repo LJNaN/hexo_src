@@ -6,13 +6,13 @@ categories: [知识点]
 ---
 
 ## 关于Selenium
-#### 什么是 Selenuium？
+### 什么是 Selenuium？
 Selenium是一个用于测试网站的自动化测试工具，支持各种浏览器包括Chrome、Firefox、Safari等主流界面浏览器，同时也支持phantomJS无界面浏览器。
 
-#### Selenuim 支持哪些系统？
+### Selenuim 支持哪些系统？
 Windows、Linux、IOS、Android等都能支持
 
-#### 我拿它做了些啥？
+### 我拿它做了些啥？
 - 学校每日打卡
 - 抢到4价疫苗(没用到`Selenium`，主要是轮询+短信提醒)
 - 还有一些脚本是用的油猴插件，如抢课(纯`js脚本`)、查全专业同学考试的成绩组成并做成表格(`python+js脚本`)等
@@ -20,10 +20,10 @@ Windows、Linux、IOS、Android等都能支持
 
 <!--more-->
 
-#### Selenuim 支持哪些浏览器？
+### Selenuim 支持哪些浏览器？
 Chrome、Edge、Firefox
 
-#### 你需要具备的一点点能力
+### 你需要具备的一点点能力
 - 会使用`id`、`name`、`class name`、`tag name`、`xpath`等方法查找元素节点
 - 会一点`python`
 > 附加：
@@ -32,21 +32,21 @@ Chrome、Edge、Firefox
 > - 定时任务：需要的话，要有能力部署在`Linux`上面
 
 ## 安装Selenium
-#### 1. 安装
+### 1. 安装
 ```python
 pip install Selenium
 ```
 
-#### 2. 找到自己浏览器的驱动
+### 2. 找到自己浏览器的驱动
 一定要对应自己的浏览器以及版本（版本！！！）
 ![jpg](Snipaste_2021-11-04_11-30-04.jpg)
 [Chrome驱动文件](https://chromedriver.storage.googleapis.com/index.html)
 [Edge驱动文件](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)
 
-#### 3. 把下下来的驱动`exe文件`复制到`Python`根目录下
+### 3. 把下下来的驱动`exe文件`复制到`Python`根目录下
 不同浏览器可能要对`exe文件`进行重命名
 
-#### 4. 写一小段代码片段
+### 4. 写一小段代码片段
 ```python
 # 为了方便演示，中间加了 time.sleep() 延迟
 from selenium import webdriver
@@ -61,10 +61,10 @@ if __name__ == '__main__':
     main()
 ```
 
-#### 5. 冲
+### 5. 冲
 ![gif](1.gif)
 
-#### 6. 定位元素的方式
+### 6. 定位元素的方式
 定位元素|含义
 -----------|----------
 find_element(By.ID, "xxx")                  |通过元素id定位
@@ -78,7 +78,7 @@ find_element(By.CSS_SELECTOR, "xxx")        |通过css选择器进行定位
 
 如果要定位多个，使用`find_elements`即可
 
-#### 6. 常用方法的使用
+### 6. 常用方法的使用
 方法                    |  说明
 ------------------------|-----------------------
 set_window_size()       |  设置浏览器的大小
@@ -95,13 +95,13 @@ size                    |  返回元素的尺寸
 text                    |  获取元素的文本
 
 ## 邮件能力(以QQ邮件为例)
-#### 需要用到的包
+### 需要用到的包
 ```python
 import smtplib
 from email.mime.text import MIMEText
 ```
 
-#### 方法
+### 方法
 ```python
 def mail(subject, content, msg_to):
   subject = "主题"
@@ -130,7 +130,7 @@ def mail(subject, content, msg_to):
 每家平台不一样，我用的[互亿无线](https://user.ihuyi.com/new/login.html)，大同小异，因为我买的学生版(50r/1000条)，所以只能用发验证码的固定模板。
 但你可以制定一些代号(但是只有你自己看得懂，笑死)，如 验证码为 0， 就是打卡全部成功，否则为打卡失败的个数，为 999999, 就是服务器炸了 等。
 
-#### 方法
+### 方法
 ```python
 # 平台一般会有自己的示例，建议看你买的平台的示例
 # 短信配置，这些平台会给你，都差不多
