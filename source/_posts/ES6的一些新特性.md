@@ -1,5 +1,5 @@
 ---
-title: ES6的一些语法糖
+title: ES6的一些新特性
 date: 2021-10-09 17:33:45
 tags: [ES6, JS, 优化]
 categories: 知识点
